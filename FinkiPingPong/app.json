@@ -1,0 +1,14 @@
+{
+  "reponame":"sample-simpleaccelerometer",
+  "title":"Simple Accelerometer",
+  "abbr":"Accelerometer",
+  "tooltip":"This simple demo shows how an app might access the accelerometer of a native device using the JavaScript bridge library",
+  "description":"This demonstration application will use the JavaScript bridge to read the device's current accelerometer data and act on it.",
+  "articleUrl":"http://software.intel.com/en-us/articles/intel-xdk-simple-accelerometer-sample",
+  "keywords":["intel.xdk API", "Accelerometer"],
+  "visible" : "true",
+  "highlights" : ["intel.xdk API", "Accelerometer"],
+  "apppreview":"true",
+  "appname":"demo.accelerometersimple",
+  "relname":"4.0.0"
+}

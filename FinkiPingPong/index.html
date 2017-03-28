@@ -1,0 +1,59 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script>
+            (function () {
+            if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) 
+			{
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+                var msViewportStyle = document.createElement("style");
+                msViewportStyle.appendChild(
+                    document.createTextNode(" @media screen and (orientation: landscape) {@-ms-viewport{width:auto!important}}")
+                );
+                msViewportStyle.appendChild(
+                    document.createTextNode(" @media screen and (orientation: portrait) {@-ms-viewport{width:auto!important;height:" + width + "px! important}}")
+                );
+                document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+            }
+			})();
+    </script>
+	<title>FinkiPingPong</title>
+	<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />	
+	
+	<script type="text/javascript">
+		/* Intel native bridge is available */
+		var onDeviceReady=function(){
+		//hide splash screen
+		intel.xdk.device.hideSplashScreen();
+		};
+		document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
+	</script>
+</head>
+<body>
+	<!-- content goes here-->
+    <img id="background" src="Images/blackboard.jpg" alt="BackGround" width="1024" height="621" style = "display:none;">
+  <div id='container'>
+    <canvas id='finki_canvas'></canvas>	    
+  </div>
+
+  <script src='JS/engine.js'></script>
+  <script src='JS/game.js'></script>      
+
+    <script type="text/javascript">
+        (function () {
+            var canvas = document.getElementById('finki_canvas'),
+                    context = canvas.getContext('2d');            
+            window.addEventListener('resize', resizeCanvas, false);
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;                                
+            }
+            resizeCanvas();
+        })();
+    </script>
+</body>
+</html>
